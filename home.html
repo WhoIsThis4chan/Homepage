@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Home
+</title>
+<meta http-equiv="Cache-control" content="public">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css.css">
+<link rel="icon" type="image/png" href="https://people.mozilla.org/~shorlander/files/australis-toolbar-buttons/images/favicon-homeTab.png">
+<script src="js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<script>
+$(document).ready(function(){
+  $('#video').hide();
+
+  $('#button').click(function() {
+    $('#video').slideToggle();
+  });
+});
+</script>
+<div id="sheet"></div>
+<video autoplay loop muted class="bgvideo" id="bgvideo">
+<source src="bg/CrsoJbL.webm" type="video/webm">
+</video>
+<div class="outer">
+  <div class="middle">
+  	<div id="head">
+  		<form class="searchForm" method="get" target="_blank" action="https://google.com/search">
+      <input class="searchBar" type="Search"  autocomplete="off" name="q" although placeholder="Google" />
+      </form>
+      <form class="searchForm" method="get" action="http://duckduckgo.com/">
+        <input class="searchBar" type="search" autocomplete="off" name="q" maxlength="255" placeholder="DuckDuckGo"/>
+      </form>
+  	</div>
+    <div id="video-wrapper">
+    <div id="button">Music</div>
+    <div id="video">
+    <iframe width="530" height="295" src="http://www.youtube.com/embed/videoseries?list=PL2Ptz5elk3Yv3Ar_KkvVBOulxDZogFWla" frameborder="0"></iframe>
+    </div>
+    <div id="wrapper">
+	  <a href="http://www.4chan.org/" target="_blank"><div class="block" style="background-color:#57C77D;">4chan</div></a>
+	  <a href="http://www.reddit.com/" target="_blank"><div class="block" style="background-color:#579FBD;">Reddit</div></a>
+	  <a href="http://www.facebook.com/" target="_blank"><div class="block" style="background-color:#579FBD;">Facebook</div></a>
+	  <a href="http://www.twitch.tv/" target="_blank"><div class="block" style="background-color:#7247D7;">Twitch</div></a>
+	  <a href="http://www.youtube.com/" target="_blank"><div class="block" style="background-color:#FF4040;">Youtube</div></a>
+	  <a href="http://www.netflix.com/" target="_blank"><div class="block" style="background-color:#FF4040;">Netflix</div></a>
+    <a href="http://www.giantbomb.com/" target="_blank"><div class="block" style="background-color:#FF4040;">GiantBomb</div></a>
+    <a href="https://www.g2a.com/" target="_blank"><div class="block" style="background-color:#FF8240;">G2a</div></a>
+    <a href="http://jsfiddle.net/" target="_blank"><div class="block" style="background-color:#579FBD;">Jsfiddle</div></a>
+    <a href="http://www.amazon.co.uk/?_encoding=UTF8&camp=1789&creative=390957&linkCode=ur2&tag=linustechtips-21" target="_blank"><div class="block" style="background-color:#FF8240;">Amazon</div></a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
