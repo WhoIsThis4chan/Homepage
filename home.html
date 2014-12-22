@@ -18,39 +18,91 @@ $(document).ready(function(){
   $('#button').click(function() {
     $('#video').slideToggle();
   });
+   var images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg'];
+   var image = images[Math.floor(Math.random() * 10) + 1];
+   $('body').css({'background-image': 'url(bg/'+image+')'});
+   console.log(image);
+
+  $('#g-button').click(function(){
+    $('.searchForm').attr('action', 'https://google.com/search');
+    $('.searchBar').attr('placeholder', 'Google');
+    $('#g-button').css({'background-color': '#4F4FD6'});
+    $('#d-button').css({'background-color': '#F26F6F'});
+  });
+  $('#d-button').click(function(){
+    $('.searchForm').attr('action', 'http://duckduckgo.com/');
+    $('.searchBar').attr('placeholder', 'DuckDuckGo');  
+    $('#d-button').css({'background-color': '#BF4545'});
+    $('#g-button').css({'background-color': '#8686F0'});
+  });
 });
 </script>
-<div id="sheet"></div>
-<video autoplay loop muted class="bgvideo" id="bgvideo">
-<source src="bg/CrsoJbL.webm" type="video/webm">
-</video>
+<div autoplay loop id="sheet"></div>
 <div class="outer">
   <div class="middle">
   	<div id="head">
+      <div id="g-button">G</div>
+      <div id="d-button">D</div>
   		<form class="searchForm" method="get" target="_blank" action="https://google.com/search">
-      <input class="searchBar" type="Search"  autocomplete="off" name="q" although placeholder="Google" />
-      </form>
-      <form class="searchForm" method="get" action="http://duckduckgo.com/">
-        <input class="searchBar" type="search" autocomplete="off" name="q" maxlength="255" placeholder="DuckDuckGo"/>
-      </form>
+      <input class="searchBar" id="goog" type="Search"  autocomplete="off" name="q" although placeholder="Google" />
+      </form>   
   	</div>
     <div id="video-wrapper">
     <div id="button">Music</div>
     <div id="video">
-    <iframe width="530" height="295" src="http://www.youtube.com/embed/videoseries?list=PL2Ptz5elk3Yv3Ar_KkvVBOulxDZogFWla" frameborder="0"></iframe>
+    <iframe width="530" height="295" src="http://www.youtube.com/embed/videoseries?list=PL2Ptz5elk3Yv3Ar_KkvVBOulxDZogFWla" theme="light" frameborder="0"></iframe>
     </div>
     <div id="wrapper">
-	  <a href="http://www.4chan.org/" target="_blank"><div class="block" style="background-color:#57C77D;">4chan</div></a>
-	  <a href="http://www.reddit.com/" target="_blank"><div class="block" style="background-color:#579FBD;">Reddit</div></a>
-	  <a href="http://www.facebook.com/" target="_blank"><div class="block" style="background-color:#579FBD;">Facebook</div></a>
-	  <a href="http://www.twitch.tv/" target="_blank"><div class="block" style="background-color:#7247D7;">Twitch</div></a>
-	  <a href="http://www.youtube.com/" target="_blank"><div class="block" style="background-color:#FF4040;">Youtube</div></a>
-	  <a href="http://www.netflix.com/" target="_blank"><div class="block" style="background-color:#FF4040;">Netflix</div></a>
-    <a href="http://www.giantbomb.com/" target="_blank"><div class="block" style="background-color:#FF4040;">GiantBomb</div></a>
-    <a href="https://www.g2a.com/" target="_blank"><div class="block" style="background-color:#FF8240;">G2a</div></a>
-    <a href="http://jsfiddle.net/" target="_blank"><div class="block" style="background-color:#579FBD;">Jsfiddle</div></a>
-    <a href="http://www.amazon.co.uk/?_encoding=UTF8&camp=1789&creative=390957&linkCode=ur2&tag=linustechtips-21" target="_blank"><div class="block" style="background-color:#FF8240;">Amazon</div></a>
+	  <a href="http://www.4chan.org/" target="_blank"><div class="block" style="background-color:#6EC48B;">4chan</div></a>
+	  <a href="http://www.reddit.com/" target="_blank"><div class="block" style="background-color:#699DB3;">Reddit</div></a>
+	  <a href="http://www.facebook.com/" target="_blank"><div class="block" style="background-color:#699DB3;">Facebook</div></a>
+	  <a href="http://www.twitch.tv/" target="_blank"><div class="block" style="background-color:#846BBF;">Twitch</div></a>
+	  <a href="http://www.youtube.com/" target="_blank"><div class="block" style="background-color:#BA5F5F;">Youtube</div></a>
+	  <a href="http://www.netflix.com/" target="_blank"><div class="block" style="background-color:#BA5F5F;">Netflix</div></a>
+    <a href="http://www.giantbomb.com/" target="_blank"><div class="block" style="background-color:#BA5F5F;">GiantBomb</div></a>
+    <a href="https://www.g2a.com/" target="_blank"><div class="block" style="background-color:#C98E6F;">G2a</div></a>
+    <a href="http://jsfiddle.net/" target="_blank"><div class="block" style="background-color:#699DB3;">Jsfiddle</div></a>
+    <a href="http://www.amazon.co.uk/?_encoding=UTF8&camp=1789&creative=390957&linkCode=ur2&tag=linustechtips-21" target="_blank"><div class="block" style="background-color:#C98E6F;">Amazon</div></a>
     </div>
+    <p id="time"></p>
+    <script>
+      setInterval(function(){
+      var d = new Date();
+      var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      var dates = d.getDate();
+      var hours = d.getHours();
+      var minutes = d.getMinutes();
+      
+      if ( dates == 1 || dates == 21 || dates == 31 ){
+        dates = dates + "st";
+      } else if ( dates ==  2 || dates == 22 ){
+        dates = dates + "nd";
+      } else if ( dates ==  3 || dates == 23 ){
+        dates = dates + "rd";
+      } else {
+        dates = dates +"th";      
+      }
+      
+      
+      if  ( hours < 12 ){
+        ampm = "AM";
+      }  else {
+        hours -= 12;
+        ampm = "PM";
+      }
+      
+      if ( hours == 0 ){
+        hours = "12";
+      }
+      
+      if ( minutes < 10 ){
+        minutes = "0" + minutes;
+      }
+      document.getElementById("time").innerHTML = dates   + "  " + months[d.getMonth()] +  ",  "  +  d.getFullYear() +  "  | " +
+      hours + ":" + minutes + " " +  ampm;
+      }, 0);
+
+    </script>
   </div>
 </div>
 </body>

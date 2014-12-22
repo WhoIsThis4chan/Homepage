@@ -1,0 +1,131 @@
+  body {
+  background-image: url(bg//tumblr_static.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size: cover;
+  overflow-y: hidden;
+  overflow-x:hidden;
+
+}
+form {
+	margin:0px auto;
+	display:block;
+	vertical-align: middle;
+	line-height: 40px;
+}
+iframe {
+opacity:0.8;
+transition:all 1s;
+}
+iframe:hover {
+	opacity:1;
+	transition:all 1s;
+}
+.outer {
+	display: table;
+	position:absolute;
+	height: 100%;
+	width:100%;
+}
+.middle {
+	display: table-cell;
+	vertical-align: middle;
+
+}
+.poke {
+	width: 640px;
+	height: 80px;
+	margin: 5px auto;
+	vertical-align: middle;
+}
+#poke {
+	margin-left: 270px;
+	margin-top: 0px;
+	height: 80px;
+	width:auto;
+	opacity: 1;
+}
+#head {
+	background-color: rgba(15,15,15,0.8);
+	width:550px;
+	height:40px;
+	margin:5px auto;
+	text-align:center;
+	overflow: hidden;
+}
+.searchBar {
+	background-color:rgba(0,0,0,0);
+	width:550px;
+	height:40px;
+	margin: 0 auto;
+	outline:0;
+	transition: all 1s;
+	border-style:none;
+	text-align: left;
+}
+.searchBar:Hover {
+	background-color:rgba(0,0,0,0.1);
+	transition: all 1s;
+}
+.searchBar:focus {
+	background-color:rgba(0,0,0,0.3);
+	transition: all 1s
+}
+#video {
+	width:550px;
+	height:270px;
+	margin:5px auto;
+	background-color: rgba(15, 15, 15, 0.8);
+}
+#wrapper {
+	background-color: rgba(15, 15, 15, 0.8);
+	height:100px;
+	width:550px;
+	margin:0 auto;
+	vertical-align: middle;
+}
+img {
+	float:left;
+	margin-left:10px;
+	margin-top:10px;
+	opacity: 0.4;
+	transition:all 1s;
+}
+img:hover {
+	opacity:1;
+	transition:all 1s;
+}
+@media screen and (max-width:1080px){
+	#head{display:none;}
+}
+input {
+	padding-left:10px;
+	font-size:20px;
+	color:white;
+}
+input[type=text] {
+	color:rgba(170,170,170,1);
+	font-family: 'Courier';
+}
+#button {
+	width:550px;
+	height:20px;
+	background-color: rgba(15, 15, 15, 0.8);
+	margin: 0 auto;
+	margin-bottom: 5px;
+	text-align: center;
+	line-height: 20px;
+	vertical-align:middle; 
+	font-family: 'Courier';
+	color:rgba(170,170,170,1);
+	cursor:pointer;
+}
+#text {
+	font-family: 'Courier';
+	text-align: center;
+	color:rgba(170,170,170,1);
+}
